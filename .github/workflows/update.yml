@@ -33,7 +33,7 @@ jobs:
         git add pytorch_model.bin
         git add config.json
         git add vocab.txt
-        git -c user.name="Github Action" -c user.email="teemu.heikkila@pistoke.org" commit -m "Update model" --author="th"
+        git -c user.name="Github Action" -c user.email="teemu.heikkila@pistoke.org" commit -m "Update model" --author="Teemu Heikkilä <teemu.heikkila@pistoke.org>"
         git push origin
 
     
