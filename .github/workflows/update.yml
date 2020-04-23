@@ -26,9 +26,10 @@ jobs:
     - name: Download model
       run: |
         curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-        wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/pytorch_model.bin
-        wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/config.json
-        wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/vocab.txt
+        git lfs install
+        wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/pytorch_model.bin -O pytorch_model.bin
+        wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/config.json -O config.json
+        wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/vocab.txt -O vocab.txt
     - name: Git Auto Commit
       uses: stefanzweifel/git-auto-commit-action@v4.1.4
       with:
