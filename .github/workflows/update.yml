@@ -24,6 +24,7 @@ jobs:
 
     - name: Run a multi-line script
       run: |
+        curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
         wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/pytorch_model.bin
         wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/config.json
         wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/vocab.txt
