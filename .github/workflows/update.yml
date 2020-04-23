@@ -30,13 +30,10 @@ jobs:
         wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/pytorch_model.bin -O pytorch_model.bin
         wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/config.json -O config.json
         wget http://dl.turkunlp.org/finbert/torch-transformers/bert-base-finnish-cased-v1/vocab.txt -O vocab.txt
-    - name: Git Auto Commit
-      uses: stefanzweifel/git-auto-commit-action@v4.1.4
-      with:
-        commit_message: Refresh model
-        branch: ${{ github.head_ref }}
-
-
-    # Runs a set of commands using the runners shell
+        git add pytorch_model.bin
+        git add config.json
+        git add vocab.txt
+        git -c user.name="Github Action" -c user.email="teemu.heikkila@pistoke.org" commit -m "Update model" --author="th"
+        git push origin
 
     
